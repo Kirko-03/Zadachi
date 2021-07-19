@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="doAfter.js"></script>
+<script>
+    doAfter(5).then((res)=>console.log(`я зарезолвился через ${res} сек`))
+    doAfter(3).then((res)=>console.log(`я зарезолвился через ${res} сек`))
+    doAfter(10).then((res)=>console.log(`я зарезолвился через ${res} сек`))
+    // let a = {
+    //     name:"kirik",
+    //     number:1,
+    //     object:{name:"kirik",number:1},
+    //     array:["dimas",1]
+    // }
+    // let b = {...a,array:[],object:{}}
+    const MyPromise = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(Math.random())
+        },2000)
+        console.log(1)
+        console.log(2)
+        console.log(3)
+    })
+    console.log(MyPromise)
+        MyPromise.then((res)=>{
+        console.log('MyPromise зарезолвился'+res)
+        console.log(MyPromise)
+    })
+    // MyPromise.then((res)=>{
+    //     console.log(res)
+    // })
+
+</script>
+</body>
+</html>
